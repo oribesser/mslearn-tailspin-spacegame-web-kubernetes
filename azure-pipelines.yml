@@ -21,7 +21,7 @@ stages:
       displayName: 'Build and push the image to container registry'
       inputs:
         command: buildAndPush
-        # buildContext: $(Build.Repository.LocalPath)
+        buildContext: $(Build.SourcesDirectory)
         repository: $(webRepository)
         dockerfile: '$(Build.SourcesDirectory)/Tailspin.SpaceGame.Web/Dockerfile'
         containerRegistry: 'Container Registry Connection'
@@ -32,7 +32,7 @@ stages:
       displayName: 'Build and push the leaderboard image to container registry'
       inputs:
         command: buildAndPush
-        # buildContext: $(Build.Repository.LocalPath)
+        buildContext: $(Build.SourcesDirectory)
         repository: $(leaderboardRepository)
         dockerfile: '$(Build.SourcesDirectory)/Tailspin.SpaceGame.LeaderboardContainer/Dockerfile'
         containerRegistry: 'Container Registry Connection'
